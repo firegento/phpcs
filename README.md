@@ -3,6 +3,8 @@ PHPCS CodeSniffer
 
 This file describes how to use the FireGento Code Sniffer.
 
+Version: 1.0.0
+
 Installation
 ------------
 
