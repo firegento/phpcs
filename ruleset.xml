@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Official FireGento Coding Standard ruleset.
+ *
+ * This FireGento e.V. module is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License version 3 as
+ * published by the Free Software Foundation.
+ *
+ * This script is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * @author    FireGento Team <team@firegento.com>
+ * @copyright 2013 FireGento Team (http://www.firegento.com)
+ * @license   http://opensource.org/licenses/gpl-3.0 GNU General Public License, version 3 (GPLv3)
+ */
+ -->
+<ruleset name="FireGento">
+    <description>Official coding standard of FireGento.</description>
+
+    <!-- ###############################################
+         ## Exclude some files from code sniffer test ##
+         ############################################### -->
+
+    <!-- Exclude EcomDev_PHPUnit unit tests -->
+    <exclude-pattern>*/Test/*</exclude-pattern>
+
+    <!-- Exclude setup scripts from code sniffer -->
+    <exclude-pattern>*/data/*/data-</exclude-pattern>
+    <exclude-pattern>*/sql/*/mysql4-</exclude-pattern>
+    <exclude-pattern>*/sql/*/install-</exclude-pattern>
+    <exclude-pattern>*/sql/*/upgrade-</exclude-pattern>
+
+
+    <!-- ############################################
+         ## Define the basic coding standard rules ##
+         ############################################ -->
+
+    <!-- The closing ?> tag MUST be omitted from files containing only PHP. -->
+    <rule ref="Zend.Files.ClosingTag"/>
+
+    <!-- Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting. -->
+    <rule ref="Generic.WhiteSpace.ScopeIndent"/>
+    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+
+    <!-- PHP code MUST use only UTF-8 without BOM. -->
+    <rule ref="Generic.Files.ByteOrderMark"/>
+
+    <!-- PHP classes/interfaces MUST use start with a capital letter and must use the _ as separator -->
+    <rule ref="PEAR.NamingConventions.ValidClassName"/>
+
+    <!-- PHP code MUST NOT contain functions outside of classes -->
+    <rule ref="Squiz.Functions.GlobalFunction"/>
+
+    <!-- PHP code MUST NOT contain any character before the opening tag -->
+    <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+
+    <!-- PHP code MUST NOT contain any short opening tag -->
+    <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+
+    <!-- PHP constants and variables should be defined properly -->
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+    <rule ref="Zend.NamingConventions.ValidVariableName"/>
+
+    <!-- PHP keywords MUST be in lower case. -->
+    <rule ref="Generic.PHP.LowerCaseKeyword"/>
+
+    <!-- The PHP constants true, false, and null MUST be in lower case. -->
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+
+    <!-- PHP code MUST contain properly declared classes and functions -->
+    <rule ref="PEAR.Classes.ClassDeclaration"/>
+    <rule ref="PEAR.Functions.FunctionDeclaration"/>
+
+    <!-- PHP files should contain an empty line at the end of the file -->
+    <rule ref="Generic.Files.EndFileNewline"/>
+
+    <!-- PHP code MUST NOT contain perl-style comments -->
+    <rule ref="PEAR.Commenting.InlineComment"/>
+
+    <!-- PHP functions MUST follow some reasonable rules -->
+    <rule ref="Squiz.Commenting.DocCommentAlignment"/>
+    <rule ref="Squiz.Scope.MethodScope"/>
+    <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+    <rule ref="PEAR.WhiteSpace.ScopeClosingBrace"/>
+
+    <!-- PHP code MUST follow some reasonable rules -->
+    <rule ref="PEAR.ControlStructures.ControlSignature"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+    <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+    <rule ref="Generic.Functions.CallTimePassByReference"/>
+
+    <!-- PHP functions MUST NOT be to complex and should be refactored if so -->
+    <!-- rule ref="Generic.Metrics.CyclomaticComplexity"/>
+    <rule ref="Generic.Metrics.NestingLevel"/ -->
+
+    <!-- There MUST NOT be trailing whitespace at the end of non-blank lines. -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow only unix file endings (newlines) -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+
+    <!-- Tweak the line length limit -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+
+
+    <!-- ###########################################################
+         ## Include some FireGento specific coding standard rules ##
+         ########################################################### -->
+
+    <rule ref="FireGento.Commenting.FileComment"/>
+    <rule ref="FireGento.Commenting.ClassComment"/>
+    <rule ref="FireGento.Commenting.FunctionComment"/>
+</ruleset>
