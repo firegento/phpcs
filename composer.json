@@ -1,0 +1,11 @@
+{
+  "name": "firegento/phpcs",
+  "license": ["GPL-3.0"],
+  "type": "library",
+  "keywords": [
+    "phpcs",
+    "firegento"
+  ],
+  "description": "Official FireGento Coding Standard for all FireGento modules.",
+  "homepage": "https://github.com/firegento/phpcs"
+}
