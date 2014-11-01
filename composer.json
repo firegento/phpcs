@@ -1,0 +1,14 @@
+{
+  "name": "firegento/phpcs",
+  "license": ["GPL-3.0"],
+  "type": "library",
+  "keywords": [
+    "phpcs",
+    "firegento"
+  ],
+  "require": {
+    "squizlabs/php_codesniffer": "1.4.7"
+  },
+  "description": "Official FireGento Coding Standard for all FireGento modules.",
+  "homepage": "https://github.com/firegento/phpcs"
+}
