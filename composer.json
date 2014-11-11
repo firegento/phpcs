@@ -6,6 +6,9 @@
     "phpcs",
     "firegento"
   ],
+  "require": {
+    "squizlabs/php_codesniffer": "1.4.7"
+  },
   "description": "Official FireGento Coding Standard for all FireGento modules.",
   "homepage": "https://github.com/firegento/phpcs"
 }
